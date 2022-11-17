@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 30%;
+        }
+        label {
+        width: 110px;
+        display: inline-block;
+        }
+        button{
+            margin-top: 1%;
+        }
+        textarea{
+            height: 150px;
+            width: 100%;
+            margin-top: 1%;
+            resize: none;
+        }
+    </style>
+    <style>
+         .main {
+            display: block;
+            position: relative;
+            padding: 15px 30px 15px 30px;
+            cursor: pointer; 
+        }
+        input[type=checkbox] {
+            visibility: hidden;
+        }
+        .mark {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: grey;
+            border-radius: 5px;
+        }
+        .main input:checked ~ .mark {
+            background-color: green;
+            display: block;
+        }
+        .mark:after {
+            content: "✔";
+            left: 4px;
+            bottom: 1px;
+            color: white;
+            position: absolute;
+            display: none;   
+        }
+        .main input:checked ~ .mark:after {
+            display: block;
+        }
+       
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Контактна інформація</legend>
+            <p><label for="name">Ім’я <em>*</em></label>
+                <input type="text" id="name"></p>
+            <p><label for="email">E-mail</label>
+                <input type="email" id="email"></p>
+            <p><label for="name">Телефон</label>
+                <input type="tel" maxlength="13"></p>
+            <label>В яку країну потрібна віза?</label>
+                <select name="select">
+                    <option>Індія</option>
+                    <option>Японія</option>
+                    <option>Китай</option>
+                    <option>Катар</option>
+                    <option>Бразилія</option>
+                    <option>Малазія</option>
+                    <option>Тайланд</option>
+                    <option>Індонезія</option>
+                    </select>
+            <textarea>Текстова область</textarea>
+        </fieldset>
+        <button type="submit">Відправити</button>
+    </form>
+
+    <label class="main">Харків
+        <input type="checkbox">
+        <span class="mark"></span>
+    </label>
+      
+    <label class="main">Київ
+        <input type="checkbox">
+        <span class="mark"></span>
+    </label>
+      
+    <label class="main">Львів
+        <input type="checkbox">
+        <span class="mark"></span>
+    </label>
+
+</style>
+</body>
+</html>
